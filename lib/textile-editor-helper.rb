@@ -1,3 +1,6 @@
+require "textile-editor-helper/version"
+
+# -*- encoding : utf-8 -*-
 module ActionView
   module Helpers
 
@@ -51,7 +54,7 @@ module ActionView
         output = []
         output << stylesheet_link_tag('textile-editor') 
         output << javascript_include_tag('textile-editor')
-        output.join("\n").html_safe
+        output.join("\n")
       end
       
       # registers a new button for the Textile Editor toolbar
@@ -127,7 +130,7 @@ module ActionView
           when :prototype
             output << %{document.observe('dom:loaded', function() \{}
           when :jquery
-            output << %{jQuery(document).ready(function($) \{}
+            output << %{$(document).ready(function() \{}
           end
         end      
 
